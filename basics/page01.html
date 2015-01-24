@@ -5,6 +5,9 @@
 	</head>
 	<script type="text/javascript"></script>
 	<body>
+		<p id="demo" ></p>
+		<br />
+		<p id="demo1" ></p>
 		<script  type="text/javascript">
 			document.write("Hello World!");
 			// single line comment
@@ -25,18 +28,74 @@
 			var str = "Something here";
 			var num = 12;
 			var logical = true;
-			if( typeof str === "string"){
+			if ( typeof str === "string") {
 				document.writeln(str + " is a string variable");
 				console.log(str + " is a string variable");
 			}
-			if( typeof num === "number"){
+			if ( typeof num === "number") {
 				document.writeln(num + " is a number variable");
 				console.log(num + " is a number variable");
 			}
-			if( typeof logical === "boolean"){
+			if ( typeof logical === "boolean") {
 				document.writeln(logical + " is a boolean variable");
 				console.log(logical + " is a boolean variable");
+			}
+
+			var result;
+			switch(4) {
+			case 1 :
+				result = "Branch 1 selected.";
+				break;
+			case 2 :
+				result = "Branch 2 selected.";
+				break;
+			case 3 :
+				result = "Branch 3 selected.";
+				break;
+			default :
+				result = "Branch default selected";
+			}
+			document.write(result);
+
+			var i = 4;
+			while (i-- > 0) {
+				document.write(i + " ");
+			}
+
+			for (var k = 0; k < 10; k++) {
+				document.write(k + "<br>");
+			}
+
+			var person = {
+				fname : "John",
+				lname : "Doe",
+				age : 25
+			};
+			var txt = "";
+			var x;
+			for (x in person) {
+				txt += person[x];
+			}
+			document.getElementById("demo").innerHTML = txt;
+			function multipleWriteOut(word, n) {
+				var txt = "";
+				for (var i = 0; i < n; i++) {
+					txt += word + "<br>";
+				}
+				return txt;
+			}
+			document.getElementById("demo1").innerHTML = multipleWriteOut("Hello World", 5);
+			alert("Warning Message");
+			var retVal = confirm("Do you want to continue?");
+			if(retVal == true){
+				alert("User want to continue!");
+			} else {
+				alert("User does not want to continue!");
 			}
 		</script>
 	</body>
 </html>
+
+
+
+
