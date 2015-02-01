@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>Example page 1</title>
+		<script type="text/javascript"></script>
 	</head>
-	<script type="text/javascript"></script>
 	<body>
 		<p id="demo" ></p>
 		<br />
@@ -19,12 +19,14 @@
 			var3 = null;
 			var4 = undefined;
 			/*
-			 * List of reserved words:
-			 * abstract boolean break byte case catch char class const continue debugger default delete do double
-			 * else enum export extends false final finally float for function goto if implements import in
-			 * instanceof int interface long new null package private protected public return short static super
-			 * switch sychronized this trow throws transient true try typeof var void volatile while with
-			 */
+			* List of reserved words:
+			* abstract boolean break byte case catch char class const continue debugger default delete do double
+			* else enum export extends false final finally float for function goto if implements import in
+			* instanceof int interface long new null package private protected public return short static super
+			* switch sychronized this trow throws transient true try typeof var void volatile while with
+			*/
+
+			// The typeof Operator and if statement
 			var str = "Something here";
 			var num = 12;
 			var logical = true;
@@ -41,6 +43,15 @@
 				console.log(logical + " is a boolean variable");
 			}
 
+			// if...else statement
+			var num = 5;
+			if (num % 2 == 0) {
+				document.writeln(num + " is even number.");
+			} else {
+				document.writeln(num + " is odd number.");
+			}
+
+			// switch statement
 			var result;
 			switch(4) {
 			case 1 :
@@ -57,11 +68,19 @@
 			}
 			document.write(result);
 
+			// The while Loop
 			var i = 4;
 			while (i-- > 0) {
 				document.write(i + " ");
 			}
 
+			// The do...while Loop
+			i = 9;
+			do {
+				document.write(i + " ");
+			} while (i-- > 4);
+
+			// The for Loop
 			for (var k = 0; k < 10; k++) {
 				document.write(k + "<br>");
 			}
@@ -71,11 +90,21 @@
 				lname : "Doe",
 				age : 25
 			};
+
+			// The for...in Loop
 			var txt = "";
 			var x;
 			for (x in person) {
+				// The continue Statement
+				if (x === "fname")
+					continue;
+				// The break Statement
+				if (x === "age")
+					break;
 				txt += person[x];
 			}
+
+			// Function Definition
 			document.getElementById("demo").innerHTML = txt;
 			function multipleWriteOut(word, n) {
 				var txt = "";
@@ -84,20 +113,53 @@
 				}
 				return txt;
 			}
+
+			// Calling a Function
 			document.getElementById("demo1").innerHTML = multipleWriteOut("Hello World", 5);
+
+			// Exceptions
+			try {
+			} catch ( e ) {
+			} finally {
+			}
+
+			// Alert Dialog Box
 			alert("Warning Message");
+
+			// Confirmation Dialog Box
 			var retVal = confirm("Do you want to continue?");
-			if(retVal == true){
+			if (retVal == true) {
 				alert("User want to continue!");
 			} else {
 				alert("User does not want to continue!");
 			}
+
+			// Prompt Dialog Box
 			var retVal2 = prompt("Enter your name here : ", "your name here");
-			alert("Welcoma aboard " + retVal2);
+			alert("Welcome aboard " + retVal2);
+
+			// Page Re-direction
+			var redirect = confirm("Do you want to redirect ot www.google.com?");
+			if (redirect == true) {
+				window.location = "http://www.google.com";
+
+			}
+			
+			// The void keyword
+			void                     function1();
+			javascript:
+			void                     function1();
+			void (function1());
+			javascript:
+			void (function1());
+
+			// Storing Cookies
+			document.cookie = "key1=value1;key2=value2;expires=date";
 		</script>
+		<!-- The Page Printing -->
+		<form>
+			<input type="button" value="Print" onclick="window.print()" />
+		</form>
 	</body>
 </html>
-
-
-
 
